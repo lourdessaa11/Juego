@@ -16,5 +16,12 @@ public class Agua extends Actor
         int miNuevoAncho = (int)miImagen.getWidth()/14;
         miImagen.scale(miNuevoAncho, miNuevaAltura);
     }
+    /**
+     * Act - do whatever the Agua wants to do. This method is called whenever
+     * the 'Act' or 'Run' button gets pressed in the environment.
+     */
+    public void act()
+    {
+        // Add your action code here.
     }
 }
