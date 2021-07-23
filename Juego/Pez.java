@@ -1,16 +1,15 @@
 import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
 
 /**
- * Write a description of class Pez here.
+ * La clase pez no ejecuta ningún método. Se utiliza para sumar puntos. 
  * 
- * @author (your name) 
- * @version (a version number or a date)
+ * @author Lourdes Saavedra
+ * @version 1
  */
 public class Pez extends Animal
 {
     /**
-     * Act - do whatever the Pez wants to do. This method is called whenever
-     * the 'Act' or 'Run' button gets pressed in the environment.
+     * Se establece el tamaño pez.
      */
     public Pez()
     {
@@ -18,6 +17,7 @@ public class Pez extends Animal
         GreenfootImage miImagen = getImage();
         int miNuevaAltura = (int)miImagen.getHeight()/8;
         int miNuevoAncho = (int)miImagen.getWidth()/8;
+        //Mantiene la escala de la imagen
         miImagen.scale(miNuevoAncho, miNuevaAltura);
     }
     public void act()

@@ -1,7 +1,7 @@
 import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
 
 /**
- * Write a description of class Ratón here.
+ * La clase ratón no ejecuta ningún método. Se utiliza para ganar el juego. 
  * 
  * @author (your name) 
  * @version (a version number or a date)
@@ -9,8 +9,7 @@ import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
 public class Ratón extends Animal
 {
     /**
-     * Act - do whatever the Gato wants to do. This method is called whenever
-     * the 'Act' or 'Run' button gets pressed in the environment.
+     * Se establece la imagen del ratón. 
      */
     public Ratón()
     {
@@ -18,13 +17,10 @@ public class Ratón extends Animal
         GreenfootImage miImagen2 = getImage();
         int miNuevaAltura2 = (int)miImagen2.getHeight()/2;
         int miNuevoAncho2 = (int)miImagen2.getWidth()/2;
+        //Permite mantener la escala de la imagen
         miImagen2.scale(miNuevoAncho2, miNuevaAltura2);
     }
 
-    /**
-     * Act - do whatever the Ratón wants to do. This method is called whenever
-     * the 'Act' or 'Run' button gets pressed in the environment.
-     */
     public void act()
     {
         // Add your action code here.

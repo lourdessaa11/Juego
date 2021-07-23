@@ -1,7 +1,8 @@
 import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
 
 /**
- * La clase Animal contiene los métodos a los que pueden acceder todas las subclases.
+ * La clase Animal contiene los métodos a los que pueden acceder 
+ * todas las subclases.
  * 
  * @author Lourdes Saavedra 
  * @version 1
@@ -9,8 +10,7 @@ import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
 public class Animal extends Actor
 {
     /**
-     * Act - do whatever the Animal wants to do. This method is called whenever
-     * the 'Act' or 'Run' button gets pressed in the environment.
+     * Comprueba si el animal se encuentra en el borde del mundo.
      */
     public boolean atWorldEdge()
     {
@@ -22,12 +22,20 @@ public class Animal extends Actor
             return false;
     }
     
+    
+    /**
+     * Se utiliza para comprobar si el animal "observa" a otra clase dentro
+     * del mundo. 
+     */
     public boolean canSee(Class clss)
     {
         Actor actor = getOneObjectAtOffset(0, 0, clss);
         return actor != null;    
     }
     
+    /**
+     * Se utiliza para que el animal se "coma" a otras clases.
+     */
     public void eat(Class clss)
     {
         Actor actor = getOneObjectAtOffset(0,0, clss);

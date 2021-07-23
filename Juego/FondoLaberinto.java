@@ -1,14 +1,13 @@
 import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
 
 /**
- * Write a description of class MyWorld here.
+ * Es la clase que genera el mundo del laberinto. 
  * 
  * @author Lourdes Saavedra 
  * @version 1
  */
 public class FondoLaberinto extends World
 {
-
     /**
      * Crea el mundo para el laberinto.
      * 
@@ -22,8 +21,8 @@ public class FondoLaberinto extends World
     }
     
     /**
-     * Prepare the world for the start of the program.
-     * That is: create the initial objects and add them to the world.
+     * Prepara el mundo para el inicio del programa. 
+     * Se crean los objetos iniciales y se añaden al mundo. 
      */
     private void prepare()
     {
