@@ -8,8 +8,10 @@ import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
  */
 public class FondoLaberinto extends World
 {
-     int score = 0;
-     //Se declara la variable score
+    int score = 0;
+    //Se declara la variable score
+    GreenfootSound miMusica = new GreenfootSound("Pineapple.mp3");
+    //Se crea el sonido como un sonido de Greenfoot.
     /**
      * Crea el mundo para el laberinto.
      * 
@@ -21,7 +23,7 @@ public class FondoLaberinto extends World
         super(600, 525, 1); 
         prepare();
     }
-    
+
     /**
      * Prepara el mundo para el inicio del programa. 
      * Se crean los objetos iniciales y se añaden al mundo. 
@@ -212,15 +214,17 @@ public class FondoLaberinto extends World
         agua3.setLocation(213,392);
         pez.setLocation(196,409);
     }
-    
+
     public void act()
     {
-        //Muestra la palabra puntaje en el mundo
+        //Muestra la palabras palabras indicadas en el mundo
         //Ubica la palabra las coordenadas dadas
         showText("Puntaje = "+ score,300,500);
-        
+        showText("Mueve al Gato con las flechas del techado",300,515);
+        miMusica.setVolume(40);
+        miMusica.play();
     }
-    
+
     /**
      * Lleva el conteo de los puntos recibiendo como parámetro una variable de 
      * tipo int
