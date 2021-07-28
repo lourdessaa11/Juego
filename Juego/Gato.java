@@ -21,14 +21,14 @@ public class Gato extends Animal
         miImagen.scale(miNuevoAncho, miNuevaAltura);
     }
 
-    private int points = 0;
+    public int points = 0;
     //Se declara la variable de puntos. 
 
     /**
      * Cuando se seleciona el método act, el gato realiza las acciones
      * enlistadas.
      */
-    
+
     public void act()
     {
         //Se llaman los métodos para conformar la rutina del gato. 
@@ -43,25 +43,36 @@ public class Gato extends Animal
      */
     public void revisarTeclado()
     {
-        //Si la flecha izquiera está presionada, se gira -5 grados.
+        //Se declara la variable speed
+        int speed = 4;
+        //Si la flecha izquiera está presionada, rota 180 grados y se mueve
+        //la cantidad de speed.
         if(Greenfoot.isKeyDown("left"))
         {
-            turn(-5);
+            setRotation(180);
+            move(speed);
         }
-        //Si la flecha derecha está presionada, se gira 5 grados.
+        //Si la flecha derecha está presionada, rota 0 grados y se mueve 
+        //la cantidad de speed.
         if(Greenfoot.isKeyDown("right"))
         {
-            turn(5);
+            setRotation(0);
+            move(speed);        
         }
-        //Si la flecha arriba está presionada, el gato se mueve 4.
+        //Si la flecha arriba está presionada, rota -90 grados y se mueve.
         if(Greenfoot.isKeyDown("up"))
         {
-            move(4);
+            setRotation(-90);
+            move(speed);
         }
-        //Si la felcha abajo está presionada, el gatose mueve -4.
+        //Si la felcha abajo está presionada,revisa si el gato se encuentra antes de los 450 en y, si sí rota 90 grados y se mueve.
         if(Greenfoot.isKeyDown("down"))
         {
-            move(-4);
+            if (getY() < 450)
+            {
+                setRotation(90);
+                move(speed);
+            }  
         }
     }
 
@@ -70,10 +81,13 @@ public class Gato extends Animal
      */
     public void intentarComer()
     {
+        //Llama al FondoLaberinto y lo llama como un mundo
+        FondoLaberinto miMundo = (FondoLaberinto)getWorld();
         if(canSee(Pez.class))
         {
             eat(Pez.class);
-            points++;
+            points =+ 1;
+            miMundo.contarPuntos(points);
             //Suma un punto por cada pez comido.
             Greenfoot.playSound("Comer.wav");
             //Se reproduce el sonido por cada pez comido. 
@@ -81,7 +95,8 @@ public class Gato extends Animal
         if(canSee(Agua.class))
         {
             eat(Agua.class);
-            points--;
+            points =- 1;
+            miMundo.contarPuntos(points);
             //Se resta un punto por cada agua comida.
             Greenfoot.playSound("Splash.wav");
             //Se reproduce el sonido por cada agua comida. 
@@ -89,8 +104,6 @@ public class Gato extends Animal
         if(canSee(Ratón.class))
         {
             eat(Ratón.class);
-            points = points+10;
-            //Se suma 10 a los puntos que se llevan.
             Greenfoot.playSound("Win.wav");
             //Se reproduce el sonido cuando se llega al ratón. 
             Greenfoot.stop();

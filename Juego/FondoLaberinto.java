@@ -8,6 +8,8 @@ import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
  */
 public class FondoLaberinto extends World
 {
+     int score = 0;
+     //Se declara la variable score
     /**
      * Crea el mundo para el laberinto.
      * 
@@ -16,7 +18,7 @@ public class FondoLaberinto extends World
     {    
         // Crea el mundo con 600x480 cells donde el tamaño de una 
         //cell es de 1x1 pixeles.
-        super(600, 480, 1); 
+        super(600, 525, 1); 
         prepare();
     }
     
@@ -200,5 +202,23 @@ public class FondoLaberinto extends World
         agua3.setLocation(214,384);
         agua2.setLocation(428,68);
         pez4.setLocation(460,61);
+    }
+    
+    public void act()
+    {
+        //Muestra la palabra puntaje en el mundo
+        //Ubica la palabra las coordenadas dadas
+        showText("Puntaje = "+ score,300,500);
+        
+    }
+    
+    /**
+     * Lleva el conteo de los puntos recibiendo como parámetro una variable de 
+     * tipo int
+     */
+    public void contarPuntos(int points)
+    {
+        //A la variable score le suma lo que haya en el parámetro
+        score = score + points;
     }
 }
