@@ -106,8 +106,8 @@ public class Gato extends Animal
             eat(Ratón.class);
             Greenfoot.playSound("Win.wav");
             //Se reproduce el sonido cuando se llega al ratón. 
-            Greenfoot.stop();
-            //El juego se detiene.
+            Greenfoot.setWorld(new Fin());
+            //Se abre el mundo Fin
         }
     }
 
