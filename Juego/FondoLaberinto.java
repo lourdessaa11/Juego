@@ -202,6 +202,15 @@ public class FondoLaberinto extends World
         agua3.setLocation(214,384);
         agua2.setLocation(428,68);
         pez4.setLocation(460,61);
+        agua2.setLocation(416,84);
+        pez4.setLocation(443,74);
+        pez2.setLocation(258,301);
+        agua4.setLocation(262,283);
+        agua4.setLocation(270,278);
+        pez3.setLocation(129,237);
+        agua.setLocation(155,238);
+        agua3.setLocation(213,392);
+        pez.setLocation(196,409);
     }
     
     public void act()
