@@ -3,8 +3,8 @@ import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
 /**
  * Write a description of class Fin here.
  * 
- * @author (your name) 
- * @version (a version number or a date)
+ * @author Lourdes
+ * @version 1
  */
 public class Fin extends World
 {
@@ -15,7 +15,7 @@ public class Fin extends World
      */
     public Fin()
     {    
-        // Create a new world with 600x400 cells with a cell size of 1x1 pixels.
+        // Create a new world with 600x525 cells with a cell size of 1x1 pixels.
         super(600, 525, 1); 
     }
 

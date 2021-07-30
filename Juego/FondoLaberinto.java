@@ -221,6 +221,7 @@ public class FondoLaberinto extends World
         //Ubica la palabra las coordenadas dadas
         showText("Puntaje = "+ score,300,500);
         showText("Mueve al Gato con las flechas del techado",300,515);
+        //Le determina un volumen al audio y lo hace sonar.
         miMusica.setVolume(40);
         miMusica.play();
     }
